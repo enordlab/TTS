@@ -555,6 +555,7 @@ def main(args):  # pylint: disable=redefined-outer-name
     eval_loader = setup_loader(ap, 1, is_val=True, verbose=True)
 
     global_step = args.restore_step
+    print(config)
     model = data_depended_init(train_loader, model)
     for epoch in range(0, config.epochs):
         c_logger.print_epoch_start(epoch, config.epochs)
