@@ -414,7 +414,7 @@ def evaluate(data_loader, model, criterion, ap, global_step, epoch):
 
     if args.rank == 0 and epoch >= config.test_delay_epochs:
         if config.test_sentences_file:
-            with open(config.test_sentences_file, "r") as f:
+            with open(config.test_sentences_file, "r", -1, "utf-8") as f:
                 test_sentences = [s.strip() for s in f.readlines()]
         else:
             test_sentences = [
